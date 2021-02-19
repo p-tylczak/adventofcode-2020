@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class Day2Test {
 
-    private Day2 day2 = new Day2();
+    private final Day2 day2 = new Day2();
 
     @Test
     void day2Part1_whenUsingTestData() throws IOException {
