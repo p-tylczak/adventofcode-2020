@@ -12,28 +12,20 @@ public class Day2 {
         PasswordPolicyParser passwordPolicyParser = new PasswordPolicyParser();
         PasswordPolicyValidator validator = new PasswordPolicyValidator();
 
-        long count = Files.readAllLines(Paths.get(fileName)).stream()
+        return Files.readAllLines(Paths.get(fileName)).stream()
                 .map(passwordPolicyParser::parse)
                 .filter(validator::isPasswordValid)
                 .count();
-
-        System.out.println("count = " + count);
-
-        return count;
     }
 
     public long day2Part2(String fileName) throws IOException {
         PasswordPolicyParser passwordPolicyParser = new PasswordPolicyParser();
         TobogganPasswordPolicyValidator validator = new TobogganPasswordPolicyValidator();
 
-        long count = Files.readAllLines(Paths.get(fileName)).stream()
+        return Files.readAllLines(Paths.get(fileName)).stream()
                 .map(passwordPolicyParser::parse)
                 .filter(validator::isPasswordValid)
                 .count();
-
-        System.out.println("count = " + count);
-
-        return count;
     }
 
     private static class PasswordPolicyParser {

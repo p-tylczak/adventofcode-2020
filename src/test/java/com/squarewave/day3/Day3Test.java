@@ -19,42 +19,42 @@ class Day3Test {
 
     @Test
     void part1_whenUsingTestDataAndMoving3RightAnd1Down_shouldHit7Trees() throws IOException {
-        MoveDefinition moveDefinition = new MoveDefinition(3, 1, 0);
+        MoveDefinition moveDefinition = new MoveDefinition(3, 1);
         long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(7);
     }
 
     @Test
     void part1_whenUsingRealDataAndMoving3RightAnd1Down_shouldHit173Trees() throws IOException {
-        MoveDefinition moveDefinition = new MoveDefinition(3, 1, 0);
+        MoveDefinition moveDefinition = new MoveDefinition(3, 1);
         long result = day3.part1("src/test/resources/data/day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(173);
     }
 
     @Test
     void part2_whenUsingTestDataAndMoving1RightAnd1Down_shouldHit2Trees() throws IOException {
-        MoveDefinition moveDefinition = new MoveDefinition(1, 1, 0);
+        MoveDefinition moveDefinition = new MoveDefinition(1, 1);
         long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(2);
     }
 
     @Test
     void part2_whenUsingTestDataAndMoving5RightAnd1Down_shouldHit3Trees() throws IOException {
-        MoveDefinition moveDefinition = new MoveDefinition(5, 1, 0);
+        MoveDefinition moveDefinition = new MoveDefinition(5, 1);
         long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(3);
     }
 
     @Test
     void part2_whenUsingTestDataAndMoving7RightAnd1Down_shouldHit4Trees() throws IOException {
-        MoveDefinition moveDefinition = new MoveDefinition(7, 1, 0);
+        MoveDefinition moveDefinition = new MoveDefinition(7, 1);
         long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(4);
     }
 
     @Test
     void part2_whenUsingTestDataAndMoving1RightAnd2Down_shouldHit2Trees() throws IOException {
-        MoveDefinition moveDefinition = new MoveDefinition(1, 2, 0);
+        MoveDefinition moveDefinition = new MoveDefinition(1, 2);
         long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(2);
     }
@@ -62,11 +62,11 @@ class Day3Test {
     @Test
     void part2_whenUsingTestDataAndMovingMultipleTimes_shouldProduce336PotentialTreeHits() throws IOException {
         List<MoveDefinition> moveDefinitions = Arrays.asList(
-                new MoveDefinition(1, 1, 0),
-                new MoveDefinition(3, 1, 0),
-                new MoveDefinition(5, 1, 0),
-                new MoveDefinition(7, 1, 0),
-                new MoveDefinition(1, 2, 0));
+                new MoveDefinition(1, 1),
+                new MoveDefinition(3, 1),
+                new MoveDefinition(5, 1),
+                new MoveDefinition(7, 1),
+                new MoveDefinition(1, 2));
 
         long total = 1;
 
@@ -80,11 +80,11 @@ class Day3Test {
     @Test
     void part2_whenUsingRealDataAndMovingMultipleTimes_shouldProduceXPotentialTreeHits() throws IOException {
         List<MoveDefinition> moveDefinitions = Arrays.asList(
-                new MoveDefinition(1, 1, 0),
-                new MoveDefinition(3, 1, 0),
-                new MoveDefinition(5, 1, 0),
-                new MoveDefinition(7, 1, 0),
-                new MoveDefinition(1, 2, 0));
+                new MoveDefinition(1, 1),
+                new MoveDefinition(3, 1),
+                new MoveDefinition(5, 1),
+                new MoveDefinition(7, 1),
+                new MoveDefinition(1, 2));
 
         long total = 1;
 
