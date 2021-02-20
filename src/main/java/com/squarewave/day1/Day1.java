@@ -13,16 +13,12 @@ public class Day1 {
         List<Integer> integers = Files.readAllLines(Paths.get(fileName)).stream()
                 .map(Integer::parseInt)
                 .sorted(Comparator.naturalOrder())
-                .peek(System.out::println)
                 .collect(Collectors.toList());
 
         for (int i = 0; i < integers.size() - 1; i++) {
             for (int j = 1; j < integers.size(); j++) {
                 Integer i1 = integers.get(i);
                 Integer i2 = integers.get(j);
-
-                System.out.print("" + i1 + " : ");
-                System.out.println(i2);
 
                 if (i1 + i2 == 2020) {
                     int product = i1 * i2;
@@ -39,7 +35,6 @@ public class Day1 {
         List<Integer> integers = Files.readAllLines(Paths.get(fileName)).stream()
                 .map(Integer::parseInt)
                 .sorted(Comparator.naturalOrder())
-                .peek(System.out::println)
                 .collect(Collectors.toList());
 
         for (int i = 0; i < integers.size() - 2; i++) {
@@ -48,9 +43,6 @@ public class Day1 {
                     Integer i1 = integers.get(i);
                     Integer i2 = integers.get(j);
                     Integer i3 = integers.get(k);
-
-                    System.out.print("" + i1 + " : ");
-                    System.out.println(i2);
 
                     if (i1 + i2 + i3 == 2020) {
                         int product = i1 * i2 * i3;
