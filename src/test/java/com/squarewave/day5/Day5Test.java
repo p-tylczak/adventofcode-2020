@@ -23,14 +23,10 @@ class Day5Test {
     }
 
     @Test
-    void getSeatIDs_whenRealData_shouldReturnHighestSeatID() {
-        Integer seatID = day5.getSeatIDs("src/test/resources/data/day5-input.txt").stream()
-                .map(SeatID::getSeatID)
-                .map(Integer::parseInt)
-                .max(Comparator.naturalOrder())
-                .orElse(-1);
+    void calculateSeatIDWithLargestID_whenRealData_shouldReturnHighestSeatID() {
+        SeatID seatID = day5.calculateSeatIDWithLargestID("src/test/resources/data/day5-input.txt");
 
-        assertThat(seatID).isEqualTo(959);
+        assertThat(seatID.getSeatID()).isEqualTo("959");
     }
 
     @Test

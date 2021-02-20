@@ -3,7 +3,9 @@ package com.squarewave.day5;
 import com.squarewave.common.utils.ParserUtils;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Day5 {
 
@@ -25,6 +27,15 @@ public class Day5 {
         }
 
         return seatIDS;
+    }
+
+    public SeatID calculateSeatIDWithLargestID(String fileName) {
+        return getSeatIDs(fileName).stream()
+                .map(SeatID::getSeatID)
+                .map(Integer::parseInt)
+                .max(Comparator.naturalOrder())
+                .map(maxID -> new SeatID(maxID.toString()))
+                .orElseThrow();
     }
 
     private Integer traverseRows(String boardingPassNumber, int currentPosition, int from, int to) {
