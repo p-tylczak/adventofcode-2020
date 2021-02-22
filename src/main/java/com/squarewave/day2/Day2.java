@@ -59,14 +59,14 @@ public class Day2 {
     }
 
     private static class PasswordPolicyValidator {
-        public boolean isPasswordValid(PasswordPolicy passwordPolicy) {
+        boolean isPasswordValid(PasswordPolicy passwordPolicy) {
             int count = StringUtils.countMatches(passwordPolicy.password, passwordPolicy.character);
             return count >= passwordPolicy.min && count <= passwordPolicy.max;
         }
     }
 
     private static class TobogganPasswordPolicyValidator {
-        public boolean isPasswordValid(PasswordPolicy passwordPolicy) {
+        boolean isPasswordValid(PasswordPolicy passwordPolicy) {
             String pass = passwordPolicy.password;
 
             char char1 = pass.charAt(passwordPolicy.min - 1);
