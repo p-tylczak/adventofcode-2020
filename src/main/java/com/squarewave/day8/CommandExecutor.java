@@ -19,19 +19,33 @@ public class CommandExecutor {
         this.instructions = instructions;
     }
 
-    public void execute(Function<CommandExecutor, Boolean> preInstructionHandleInterrupter) {
-        resetExecutionCountByInstruction();
+    public Status execute(Function<CommandExecutor, Boolean> preInstructionHandleInterrupter) {
+        instructions.forEach(ins -> executionCountByInstruction.put(ins, new AtomicInteger()));
         stackPointer.push(1);
 
         while (getCurrentStackPointer() > 0 && getCurrentStackPointer() <= instructions.size()) {
             if (preInstructionHandleInterrupter.apply(this)) {
-                break;
+                return Status.TERMINATED_INTERRUPTED;
             }
 
             Instruction currentInstruction = getCurrentInstruction();
             handleInstruction(currentInstruction);
             executionCountByInstruction.get(currentInstruction).incrementAndGet();
         }
+
+        return Status.EXIT_NORMALLY;
+    }
+
+    public Instruction getCurrentInstruction() {
+        return instructions.get(getCurrentStackPointer() - 1);
+    }
+
+    public int getAccumulatorValue() {
+        return accumulatorValue;
+    }
+
+    public Map<Instruction, AtomicInteger> getExecutionCountByInstruction() {
+        return executionCountByInstruction;
     }
 
     private void handleInstruction(Instruction instruction) {
@@ -54,24 +68,7 @@ public class CommandExecutor {
         stackPointer.push(nextInstructionPointer);
     }
 
-    public void resetExecutionCountByInstruction() {
-        executionCountByInstruction.clear();
-        instructions.forEach(ins -> executionCountByInstruction.put(ins, new AtomicInteger()));
-    }
-
-    public int getCurrentStackPointer() {
+    private int getCurrentStackPointer() {
         return stackPointer.peek();
-    }
-
-    public Instruction getCurrentInstruction() {
-        return instructions.get(getCurrentStackPointer() - 1);
-    }
-
-    public int getAccumulatorValue() {
-        return accumulatorValue;
-    }
-
-    public Map<Instruction, AtomicInteger> getExecutionCountByInstruction() {
-        return executionCountByInstruction;
     }
 }

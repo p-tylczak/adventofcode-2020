@@ -18,4 +18,16 @@ class Day8Test {
         int accValue = day8.accValueWhenLoopDetected("src/test/resources/data/day8-input.txt");
         assertThat(accValue).isEqualTo(1782);
     }
+
+    @Test
+    void accValueWhenExecutionCompletes_whenTestData_shouldReturn8() {
+        int accValue = day8.accValueWhenExecutionCompletes("src/test/resources/test-data/test-day8-input.txt");
+        assertThat(accValue).isEqualTo(8);
+    }
+
+    @Test
+    void accValueWhenExecutionCompletes_whenRealData_shouldReturn8() {
+        int accValue = day8.accValueWhenExecutionCompletes("src/test/resources/data/day8-input.txt");
+        assertThat(accValue).isEqualTo(797);
+    }
 }
