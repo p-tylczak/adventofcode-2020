@@ -6,7 +6,8 @@ public class LoopDetector implements Function<CommandExecutor, Boolean> {
 
     @Override
     public Boolean apply(CommandExecutor commandExecutor) {
-        Instruction currentInstruction = commandExecutor.getInstructions().get(commandExecutor.getStackPointer() - 1);
-        return commandExecutor.getExecutionCountByInstruction().get(currentInstruction).get() >= 1;
+        return commandExecutor.getExecutionCountByInstruction()
+                .get(commandExecutor.getCurrentInstruction())
+                .get() >= 1;
     }
 }
