@@ -15,7 +15,7 @@ public class SpaceFunctions {
                     return c.getX() == coordinates.getX() && c.getY() == coordinates.getY();
                 })
                 .findFirst()
-                .orElseThrow();
+                .orElse(null);
     }
 
     public String toString(List<Space> spaces) {

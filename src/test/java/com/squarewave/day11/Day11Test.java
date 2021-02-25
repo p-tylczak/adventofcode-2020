@@ -14,9 +14,23 @@ class Day11Test {
         assertThat(result).isEqualTo(37);
     }
 
-    @Test
+    /* THIS TAKES LONG TIME, ~5min to run */
+    // @Test
     void calculateNumberOfOccupiedSeats_whenRealData_shouldReturn2427() {
         long result = day11.calculateNumberOfOccupiedSeats("src/test/resources/data/day11-input.txt");
         assertThat(result).isEqualTo(2427);
+    }
+
+    @Test
+    void calculateNumberOfOccupiedSeatsPart2_whenTestData_shouldReturn26() {
+        long result = day11.calculateNumberOfOccupiedSeatsPart2("src/test/resources/test-data/test-day11-input.txt");
+        assertThat(result).isEqualTo(26);
+    }
+
+    /* THIS TAKES LONG TIME, ~5min to run */
+    // @Test
+    void calculateNumberOfOccupiedSeatsPart2_whenRealData_shouldReturn2199() {
+        long result = day11.calculateNumberOfOccupiedSeatsPart2("src/test/resources/data/day11-input.txt");
+        assertThat(result).isEqualTo(2199);
     }
 }
