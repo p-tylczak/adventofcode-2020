@@ -12,7 +12,7 @@ class Day2Test {
 
     @Test
     void day2Part1_whenUsingTestData() throws IOException {
-        long result = day2.day2Part1("src/test/resources/test-data/test-day2-input.txt");
+        long result = day2.day2Part1("src/test/resources/test-data/day2-input.txt");
         assertThat(result).isEqualTo(2);
     }
 
@@ -24,7 +24,7 @@ class Day2Test {
 
     @Test
     void day2Part2_whenUsingTestData() throws IOException {
-        long result = day2.day2Part2("src/test/resources/test-data/test-day2-input.txt");
+        long result = day2.day2Part2("src/test/resources/test-data/day2-input.txt");
         assertThat(result).isEqualTo(1);
     }
 

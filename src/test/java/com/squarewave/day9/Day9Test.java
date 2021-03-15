@@ -12,7 +12,7 @@ class Day9Test {
 
     @Test
     void getCorruptedData_whenTestDataAndPreambleSize5_shouldReturn127() {
-        BigInteger result = day9.getCorruptedData(5, "src/test/resources/test-data/test-day9-input-preamble-5.txt");
+        BigInteger result = day9.getCorruptedData(5, "src/test/resources/test-data/day9-input-preamble-5.txt");
         assertThat(result).isEqualTo(127);
     }
 
@@ -24,7 +24,7 @@ class Day9Test {
 
     @Test
     void getEncryptionWeakness_whenTestDataAndNumberToCheckIs127_shouldReturn62() {
-        BigInteger result = day9.getEncryptionWeakness(BigInteger.valueOf(127), "src/test/resources/test-data/test-day9-input-preamble-5.txt");
+        BigInteger result = day9.getEncryptionWeakness(BigInteger.valueOf(127), "src/test/resources/test-data/day9-input-preamble-5.txt");
         assertThat(result).isEqualTo(62);
     }
 

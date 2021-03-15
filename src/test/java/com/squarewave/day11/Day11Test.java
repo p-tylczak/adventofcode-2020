@@ -10,7 +10,7 @@ class Day11Test {
 
     @Test
     void calculateNumberOfOccupiedSeats_whenTestData_shouldReturn37() {
-        long result = day11.calculateNumberOfOccupiedSeats("src/test/resources/test-data/test-day11-input.txt");
+        long result = day11.calculateNumberOfOccupiedSeats("src/test/resources/test-data/day11-input.txt");
         assertThat(result).isEqualTo(37);
     }
 
@@ -23,7 +23,7 @@ class Day11Test {
 
     @Test
     void calculateNumberOfOccupiedSeatsPart2_whenTestData_shouldReturn26() {
-        long result = day11.calculateNumberOfOccupiedSeatsPart2("src/test/resources/test-data/test-day11-input.txt");
+        long result = day11.calculateNumberOfOccupiedSeatsPart2("src/test/resources/test-data/day11-input.txt");
         assertThat(result).isEqualTo(26);
     }
 

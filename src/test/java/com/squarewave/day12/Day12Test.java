@@ -10,7 +10,7 @@ class Day12Test {
 
     @Test
     void manhattanDistance_whenTestData_shouldReturn25() {
-        Integer result = day12.manhattanDistance("src/test/resources/test-data/test-day12-input.txt");
+        Integer result = day12.manhattanDistance("src/test/resources/test-data/day12-input.txt");
         assertThat(result).isEqualTo(25);
     }
 
@@ -22,7 +22,7 @@ class Day12Test {
 
     @Test
     void manhattanDistancePart2_whenTestData_shouldReturn286() {
-        Integer result = day12.manhattanDistancePart2("src/test/resources/test-data/test-day12-input.txt");
+        Integer result = day12.manhattanDistancePart2("src/test/resources/test-data/day12-input.txt");
         assertThat(result).isEqualTo(286);
     }
 

@@ -9,7 +9,7 @@ class Day8Test {
 
     @Test
     void accValueWhenLoopDetected_whenTestData_shouldReturn5() {
-        int accValue = day8.accValueWhenLoopDetected("src/test/resources/test-data/test-day8-input.txt");
+        int accValue = day8.accValueWhenLoopDetected("src/test/resources/test-data/day8-input.txt");
         assertThat(accValue).isEqualTo(5);
     }
 
@@ -21,7 +21,7 @@ class Day8Test {
 
     @Test
     void accValueWhenExecutionCompletes_whenTestData_shouldReturn8() {
-        int accValue = day8.accValueWhenExecutionCompletes("src/test/resources/test-data/test-day8-input.txt");
+        int accValue = day8.accValueWhenExecutionCompletes("src/test/resources/test-data/day8-input.txt");
         assertThat(accValue).isEqualTo(8);
     }
 

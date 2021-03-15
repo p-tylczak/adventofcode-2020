@@ -18,7 +18,7 @@ class Day6Test {
 
     @Test
     void getCountForAllGroups_whenTestData_shouldReturn11() {
-        BigInteger countForAllGroups = day6.getCountForAllGroups("src/test/resources/test-data/test-day6-input.txt");
+        BigInteger countForAllGroups = day6.getCountForAllGroups("src/test/resources/test-data/day6-input.txt");
         assertThat(countForAllGroups).isEqualTo(11);
     }
 
@@ -30,7 +30,7 @@ class Day6Test {
 
     @Test
     void getCountForAllGroupsPart2_whenTestData_shouldReturn6() {
-        BigInteger countForAllGroups = day6.getCountForAllGroupsPart2("src/test/resources/test-data/test-day6-input.txt");
+        BigInteger countForAllGroups = day6.getCountForAllGroupsPart2("src/test/resources/test-data/day6-input.txt");
         assertThat(countForAllGroups).isEqualTo(6);
     }
 

@@ -14,7 +14,7 @@ class Day4Test {
     @Test
     void calculateValidPassports_whenSimpleValidatorTestData_shouldReturn2() {
         long result = day4.calculateNumberOfValidPassports(
-                "src/test/resources/test-data/test-day4-input.txt",
+                "src/test/resources/test-data/day4-input.txt",
                 new PassportValidator());
 
         assertThat(result).isEqualTo(2);

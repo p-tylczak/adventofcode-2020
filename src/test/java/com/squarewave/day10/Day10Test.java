@@ -12,7 +12,7 @@ class Day10Test {
 
     @Test
     void getResultOfAddition_whenTestData_shouldReturn220() {
-        Integer resultOfAddition = day10.getResultOfAddition("src/test/resources/test-data/test-day10-input.txt");
+        Integer resultOfAddition = day10.getResultOfAddition("src/test/resources/test-data/day10-input.txt");
         assertThat(resultOfAddition).isEqualTo(220);
     }
 
@@ -24,7 +24,7 @@ class Day10Test {
 
     @Test
     void getDistinctNumberOfAdapterArrangements_whenTestData_shouldReturn19208() {
-        BigInteger resultOfAddition = day10.getDistinctNumberOfAdapterArrangements("src/test/resources/test-data/test-day10-input.txt");
+        BigInteger resultOfAddition = day10.getDistinctNumberOfAdapterArrangements("src/test/resources/test-data/day10-input.txt");
         assertThat(resultOfAddition).isEqualTo(19208);
     }
 

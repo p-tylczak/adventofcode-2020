@@ -12,7 +12,7 @@ class Day7Test {
 
     @Test
     void getCombinationCount_whenTestData_shouldReturn4() {
-        Long combinationCount = day7.getCombinationCount("src/test/resources/test-data/test-day7-input.txt");
+        Long combinationCount = day7.getCombinationCount("src/test/resources/test-data/day7-input.txt");
         assertThat(combinationCount).isEqualTo(4);
     }
 
@@ -24,13 +24,13 @@ class Day7Test {
 
     @Test
     void getBagCount_whenTestData_shouldReturn32() {
-        BigInteger combinationCount = day7.getBagCount("src/test/resources/test-data/test-day7-input.txt");
+        BigInteger combinationCount = day7.getBagCount("src/test/resources/test-data/day7-input.txt");
         assertThat(combinationCount).isEqualTo(32);
     }
 
     @Test
     void getBagCount_whenTestDataPart2_shouldReturn126() {
-        BigInteger combinationCount = day7.getBagCount("src/test/resources/test-data/test-day7-input-part2.txt");
+        BigInteger combinationCount = day7.getBagCount("src/test/resources/test-data/day7-input-part2.txt");
         assertThat(combinationCount).isEqualTo(126);
     }
 

@@ -20,7 +20,7 @@ class Day3Test {
     @Test
     void part1_whenUsingTestDataAndMoving3RightAnd1Down_shouldHit7Trees() throws IOException {
         MoveDefinition moveDefinition = new MoveDefinition(3, 1);
-        long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
+        long result = day3.part1("src/test/resources/test-data/day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(7);
     }
 
@@ -34,28 +34,28 @@ class Day3Test {
     @Test
     void part2_whenUsingTestDataAndMoving1RightAnd1Down_shouldHit2Trees() throws IOException {
         MoveDefinition moveDefinition = new MoveDefinition(1, 1);
-        long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
+        long result = day3.part1("src/test/resources/test-data/day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(2);
     }
 
     @Test
     void part2_whenUsingTestDataAndMoving5RightAnd1Down_shouldHit3Trees() throws IOException {
         MoveDefinition moveDefinition = new MoveDefinition(5, 1);
-        long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
+        long result = day3.part1("src/test/resources/test-data/day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(3);
     }
 
     @Test
     void part2_whenUsingTestDataAndMoving7RightAnd1Down_shouldHit4Trees() throws IOException {
         MoveDefinition moveDefinition = new MoveDefinition(7, 1);
-        long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
+        long result = day3.part1("src/test/resources/test-data/day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(4);
     }
 
     @Test
     void part2_whenUsingTestDataAndMoving1RightAnd2Down_shouldHit2Trees() throws IOException {
         MoveDefinition moveDefinition = new MoveDefinition(1, 2);
-        long result = day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
+        long result = day3.part1("src/test/resources/test-data/day3-input.txt", moveDefinition);
         assertThat(result).isEqualTo(2);
     }
 
@@ -71,7 +71,7 @@ class Day3Test {
         long total = 1;
 
         for (MoveDefinition moveDefinition : moveDefinitions) {
-            total *= day3.part1("src/test/resources/test-data/test-day3-input.txt", moveDefinition);
+            total *= day3.part1("src/test/resources/test-data/day3-input.txt", moveDefinition);
         }
 
         assertThat(total).isEqualTo(336);

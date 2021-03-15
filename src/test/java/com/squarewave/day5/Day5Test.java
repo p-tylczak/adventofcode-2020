@@ -15,7 +15,7 @@ class Day5Test {
 
     @Test
     void getSeatIDs_whenTestData_shouldReturnCorrectValues() {
-        List<String> seatIDs = day5.getSeatIDs("src/test/resources/test-data/test-day5-input.txt").stream()
+        List<String> seatIDs = day5.getSeatIDs("src/test/resources/test-data/day5-input.txt").stream()
                 .map(SeatID::getSeatID)
                 .collect(Collectors.toList());
 
