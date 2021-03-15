@@ -27,7 +27,7 @@ class Day12Test {
     }
 
     @Test
-    void manhattanDistancePart2_whenTestData_shouldReturnX() {
+    void manhattanDistancePart2_whenRealData_shouldReturn13340() {
         Integer result = day12.manhattanDistancePart2("src/test/resources/data/day12-input.txt");
         assertThat(result).isEqualTo(13340);
     }
