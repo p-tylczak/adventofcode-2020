@@ -10,22 +10,22 @@ public class Day13 {
     private final ParserUtils parserUtils = new ParserUtils();
 
     public int findResult(String fileName) {
-        List<String> lines = parserUtils.readLines(fileName);
+        var lines = parserUtils.readLines(fileName);
 
         int earliestDepartureTimestamp = Integer.parseInt(lines.get(0));
-        List<Integer> busIds = Arrays.stream(lines.get(1).split(","))
+        var busIds = Arrays.stream(lines.get(1).split(","))
                 .filter(id -> !id.equals("x"))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
 
-        Map<Integer, Integer> nextDepartureTimestampByBusId = new HashMap<>();
+        var nextDepartureTimestampByBusId = new HashMap<Integer, Integer>();
 
         for (int busId : busIds) {
             int nextDepartureTimestamp = calculateNextDepartureTimestampAfter(earliestDepartureTimestamp, 0, busId);
             nextDepartureTimestampByBusId.put(busId, nextDepartureTimestamp);
         }
 
-        Map.Entry<Integer, Integer> next = nextDepartureTimestampByBusId.entrySet().stream()
+        var next = nextDepartureTimestampByBusId.entrySet().stream()
                 .reduce((e1, e2) -> e1.getValue() < e2.getValue() ? e1 : e2)
                 .orElseThrow();
 
@@ -34,11 +34,11 @@ public class Day13 {
 
     /* with help from https://github.com/cs-cordero/advent_of_code/blob/master/rs/2020/day13/src/main.rs */
     public long findTimeT(String fileName) {
-        List<String> lines = parserUtils.readLines(fileName);
+        var lines = parserUtils.readLines(fileName);
 
-        List<String> busIds = Arrays.asList(lines.get(1).split(","));
+        var busIds = Arrays.asList(lines.get(1).split(","));
 
-        List<Integer> offsets = getOffsets(busIds);
+        var offsets = getOffsets(busIds);
         var offsetByBusId = getOffsetsByBusId(offsets, busIds);
 
         long iterator = 1;
@@ -68,17 +68,12 @@ public class Day13 {
     }
 
     private List<Integer> getOffsets(List<String> busIds) {
-        AtomicInteger counter = new AtomicInteger(0);
+        var counter = new AtomicInteger(0);
 
         return busIds.stream()
                 .map(busId -> {
                     int v = counter.getAndIncrement();
-
-                    if (busId.equals("x")) {
-                        return 0;
-                    } else {
-                        return v;
-                    }
+                    return (busId.equals("x")) ? 0 : v;
                 })
                 .collect(Collectors.toList());
     }
